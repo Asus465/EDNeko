@@ -1,33 +1,14 @@
 buildscript {
     repositories {
         mavenLocal()
-        maven {
-            url = "https://mirrors.cloud.tencent.com/nexus/repository/jitpack/"
-            content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-        }
-        maven {
-            url = "https://maven.aliyun.com/repository/jitpack/"
-            content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-        }
-        maven {
-            url = "https://jitpack.io/"
-            content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-        }
+        maven { url = "https://jitpack.io/" }
         maven { url = "https://maven.minecraftforge.net/" }
         maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
-        maven {
-            url = "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/"
-            content { excludeGroupByRegex "com\\.github\\..*" }
-        }
-        maven {
-            url = "https://maven.aliyun.com/nexus/content/groups/public/"
-            content { excludeGroupByRegex "com\\.github\\..*" }
-        }
-        maven {
-            url = "https://repo.huaweicloud.com/repository/maven/"
-            content { excludeGroupByRegex "com\\.github\\..*" }
-        }
         mavenCentral()
+    }
+    dependencies {
+        classpath "com.github.ccbluex:ForgeGradle:FG_2.1-a3d86a59c0-1"
+        classpath "com.github.xcfrg:mixingradle:0.6-ae2a80ec1a-1"
     }
 }
 
@@ -36,37 +17,16 @@ plugins {
     id "idea"
     id "org.jetbrains.kotlin.jvm"
     id "com.github.johnrengelman.shadow" version "6.1.0"
-    id "net.minecraftforge.gradle.forge"
-    id "org.spongepowered.mixin"
 }
+
+apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: "org.spongepowered.mixin"
 
 repositories {
     mavenLocal()
-    maven {
-        url = "https://mirrors.cloud.tencent.com/nexus/repository/jitpack/"
-        content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-    }
-    maven {
-        url = "https://maven.aliyun.com/repository/jitpack/"
-        content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-    }
-    maven {
-        url = "https://jitpack.io/"
-        content { includeGroupByRegex "com\\.github\\.(ccbluex|xcfrg)\\..*" }
-    }
+    maven { url = "https://jitpack.io/" }
+    maven { url = "https://maven.minecraftforge.net/" }
     maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
-    maven {
-        url = "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/"
-        content { excludeGroupByRegex "com\\.github\\..*" }
-    }
-    maven {
-        url = "https://maven.aliyun.com/nexus/content/groups/public/"
-        content { excludeGroupByRegex "com\\.github\\..*" }
-    }
-    maven {
-        url = "https://repo.huaweicloud.com/repository/maven/"
-        content { excludeGroupByRegex "com\\.github\\..*" }
-    }
     mavenCentral()
 }
 
