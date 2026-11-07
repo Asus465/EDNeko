@@ -258,3 +258,5 @@ AirClient 是一个免费开源的 Minecraft 作弊客户端，基于 LiquidBoun
 
 ### 功能开发 / Features
 - [x] 懒得开发
+
+build-trigger
